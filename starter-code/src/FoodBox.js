@@ -5,13 +5,6 @@ import foods from './foods.json'
 class FoodBox extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      foodArray: foods.slice(0, 5)
-    };
-  }
-
-  handleChange(event) {
-    this.setState({value: event.target.value});
   }
 
 render() {
@@ -20,14 +13,14 @@ render() {
       <article className="media">
         <div className="media-left">
           <figure className="image is-64x64">
-            <img src="https://i.imgur.com/eTmWoAN.png" alt="food"/>
+            <img src={this.props.food.image} alt="food"/>
           </figure>
     </div>
     <div className="media-content">
       <div className="content">
         <p>
-          <strong>{this.state.foodArray.name}</strong> <br />
-          <small>{this.state.foodArray.calories}</small>
+          <strong>{this.props.food.name}</strong> <br />
+          <small>{this.props.food.calories}</small>
         </p>
       </div>
     </div>
@@ -38,7 +31,6 @@ render() {
             className="input"
             type="number" 
             value="1"
-            onChange={this.handleChange}
           />
         </div>
         <div className="control">
@@ -50,6 +42,6 @@ render() {
 </div>
   )
 }
-}
+  }
 
 export default FoodBox;
