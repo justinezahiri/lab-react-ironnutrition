@@ -16,15 +16,14 @@ class App extends Component {
   addFood = (food) => {
     const newFoodsArray = [...this.state.foodsArray];
     newFoodsArray.push(food);
-    this.setState({foodsArray : newFoodsArray})
-
-  }
+    this.setState({foodsArray : newFoodsArray,
+                    showForm : false
+    })
+}
 
   render() {
     return (
       <div className="App">
-
-
 
         {this.state.showForm ? <AddFood addTheFood={this.addFood}/>
           :

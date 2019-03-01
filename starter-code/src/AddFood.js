@@ -6,9 +6,9 @@ class AddFood extends Component {
       super(props);
 
       this.state = { 
-        name: '',
+        name: 'food',
         calories: 0,
-        image: ''
+        image: 'www.example/image.com'
       }
   }
   
@@ -36,8 +36,8 @@ class AddFood extends Component {
             <input type="text" name="name" value={this.state.name} onChange={(e) => this.handleChange(e)} />
             <label>Calories:</label>
             <input type="number" name="calories" value={this.state.calories} onChange={(e) => this.handleChange(e)} />
-            <label>Image</label>
-            <input type="image" name="image" value={this.state.image} onChange={(e) => this.handleChange(e)} />
+            <label>Image:</label>
+            <input type="url" name="image" value={this.state.image} onChange={(e) => this.handleChange(e)} />
             <input type="submit" value="Submit" />
         </form>
       </div>
